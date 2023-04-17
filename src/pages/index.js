@@ -1,3 +1,4 @@
+import { Button } from "semantic-ui-react"
 
 export default function Index() {
   return (
@@ -5,7 +6,7 @@ export default function Index() {
       <h2>
         SmellGood Shop
       </h2>
-   
+    <Button primary> Ir al login</Button>
     </div>
   )
 }
