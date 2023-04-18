@@ -3,8 +3,8 @@ import {BasicLayout} from "@/layouts"
 
 export default function HomePage() {
   return (
-    <BasicLayout isContainer>
-      <h1>Estamos en la Home</h1>
+    <BasicLayout >
+      <h1 style={{paddingTop:50}}>Estamos en la Home</h1>
     </BasicLayout>
   )
 }
