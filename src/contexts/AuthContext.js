@@ -1,4 +1,8 @@
 import { useState, useEffect, createContext } from "react"
+import {Token, User} from "@/api"
+
+const tokenCtrl = new Token();
+const userCtrl = new User();
 
 export const AuthContext = createContext()
 export function AuthProvider(props){
@@ -13,9 +17,9 @@ export function AuthProvider(props){
 
     const login = async (token) =>{
         try {
-            // TODO: Setear el token en el localStorage
-            //TODO: Obtener los datos del usuario
-            setUser({email: "saida@gmail.com"});
+            tokenCtrl.setToken(token);
+            const response = await userCtrl.getMe();
+            setUser(response);
            setToken(token);
            setLoading(false);
         } catch (error) {
@@ -37,7 +41,7 @@ export function AuthProvider(props){
 
     return(
         <AuthContext.Provider value={data}>
-            <p>Esto es el AuthContext</p>
+            
             {children}
         </AuthContext.Provider>
     );
