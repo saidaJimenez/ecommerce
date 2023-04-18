@@ -1,12 +1,21 @@
+import { Container } from "semantic-ui-react"
+import classNames from "classnames";
 import styles from "./BasicLayout.module.scss";
 
 
 export function BasicLayout(props){
-    const { children } = props;
+    const { children, 
+        isOpenSearch= false,
+         isContainer = false, 
+         relative=false 
+        } = props;
     return(
         <>
-        <h2>BasicLayout</h2>
-        { children }
+       {/* TODO: TopBar */}
+       <Container fluid>
+        { isContainer? <Container>{children}</Container> : children }
+        </Container>
+        {/* TODO: Footer*/}
         </>
     )
 }
