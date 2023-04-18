@@ -24,4 +24,5 @@ export class Auth {
             throw error;
         }
     }
-}
+    
+    }
