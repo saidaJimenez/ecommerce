@@ -1,5 +1,6 @@
 import { Image } from "semantic-ui-react"
 import Link from "next/link";
+import {Account} from "../Account"
 import styles from "./TopBar.module.scss";
 
 export function TopBar(props) {
@@ -17,7 +18,7 @@ export function TopBar(props) {
                 <span>Menu</span>
             </div>
             <div classNae={styles.right}>
-                <span>ACCOUNT</span>
+                <Account/>
             </div>
     </div>
     )
