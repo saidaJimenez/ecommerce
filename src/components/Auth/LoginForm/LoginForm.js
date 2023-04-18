@@ -1,6 +1,7 @@
 import{ Form } from "semantic-ui-react";
 import {useFormik} from "formik";
 import{ useRouter } from "next/router"
+import {useAuth} from "@/hooks"
 import {Auth} from "@/api";
 import {initialValues, validationSchema} from "./LoginForm.form"
 
@@ -8,6 +9,8 @@ const authCtrl = new Auth();
 
 export  function LoginForm() {
     const router = useRouter();
+    console.log(useAuth())
+
     const formik = useFormik({
         initialValues:initialValues(),
         validationSchema:validationSchema(),
