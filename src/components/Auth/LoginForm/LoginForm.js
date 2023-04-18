@@ -9,7 +9,9 @@ const authCtrl = new Auth();
 
 export  function LoginForm() {
     const router = useRouter();
+    const{login} =useAuth(); 
     console.log(useAuth())
+    
 
     const formik = useFormik({
         initialValues:initialValues(),
@@ -17,7 +19,8 @@ export  function LoginForm() {
         validateOnChange: false,
         onSubmit: async (formValue)=>{
             try {
-                const response = await authCtrl.login(formValue)
+                const response = await authCtrl.login(formValue);
+                login(response.jwt)
                 console.log(response)
                 /*router.push("/")*/
             } catch (error) {
