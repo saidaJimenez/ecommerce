@@ -1,0 +1,13 @@
+@import "~/src/scss/index.scss";
+
+.platforms{
+  position: relative;
+  background-color: $primary;
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 50px 0 20px;
+  border-radius: 100px 0 0 100px;
+}
+
