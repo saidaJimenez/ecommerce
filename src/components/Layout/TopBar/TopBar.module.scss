@@ -1,29 +1,32 @@
 .topBar{
     position: fixed;
-    display: flex;
+    display:flex;
     align-items: center;
     width: 100%;
     padding: 20px;
-    z-index: 5;
-    
+    z-index:5;
 }
-.left{
+
+.left {
     width: 20%;
 
     img{
         height: 150px;
-        margin-top: -50px;
+        margin-top:-50px;
     }
 }
-.center{
-    width: 60%;
+
+.center {
+    width:60%;
     display:flex;
     justify-content: center;
-    margin-top: -50px;
+    margin-top:-50px;
 }
-.right {
+.right{
     width: 20%;
-    display: flex;
-    justify-content: flex-end !important;
-    margin-top: -50px;
+    display:flex;
+    justify-content: flex-end;
+    margin-top:-50px;
 }
+
+
