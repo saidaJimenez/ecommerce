@@ -4,13 +4,19 @@ import Link from "next/link";
 import { map } from "lodash"
 import { Platform } from "@/api"
 import styles from "./Menu.module.scss";
+import classNames from "classnames";
 
 const platformCtrl = new Platform();
 
 export  function Menu(props) {
     const {isOpenSearch}=props;
     const [platforms, setPlatforms] = useState(null)
-    console.log(platforms)
+    const  [showSearch, setShowSearch] = useState(false)
+
+   
+
+    const openCloseSearch = () => setShowSearch((prevState) => !prevState);
+  
 
     useEffect(() => {
     (async () =>{
@@ -30,6 +36,24 @@ export  function Menu(props) {
             {platform.attributes.title}
         </Link>
       ))}
+      <button className={styles.search} 
+      onClick={openCloseSearch}> 
+      <Icon name ="search"/>
+      </button>
+     
+     <div className={classNames(styles.inputContainer, {
+        [styles.active] : showSearch,
+     })}>
+        <Input id="search-contenido"
+         placeholder="Buscador" 
+         className={styles.input}
+         focus={true}/> 
+        <Icon name="close"
+         className={styles.closeInput}
+         onClick={openCloseSearch}
+       />
+     </div>
+
     </div>
   )
 }
