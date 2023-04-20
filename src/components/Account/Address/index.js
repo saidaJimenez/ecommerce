@@ -1,5 +1,6 @@
 import {AddAddress} from "./AddAddress"
 import { AddressForm} from "./AddressForm"
+import { ListAddresses} from "./ListAddresses";
 
 
 
@@ -7,4 +8,5 @@ import { AddressForm} from "./AddressForm"
 export const Address = {
     AddAddress,
     AddressForm,
+    ListAddresses
 };
