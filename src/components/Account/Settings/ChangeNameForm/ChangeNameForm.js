@@ -1,8 +1,11 @@
 import { Form } from "semantic-ui-react" ;
 import { useFormik } from "formik";
+import { User } from "@/api"
 import { useAuth } from "@/hooks";
 import {initialValues, validationSchema} from "./ChangeNameForm.form"
 import styles from "./ChangeNameForm.module.scss"
+
+const userCtrl = new User();
 
 export  function ChangeNameForm() {
 
@@ -15,8 +18,7 @@ export  function ChangeNameForm() {
     validateOnChange: false,
     onSubmit: async (formValue) =>{
       try {
-        console.log("FORM ENVIADO")
-        console.log(formValue)
+       await userCtrl.updateMe(user.id, formValue)
       } catch (error) {
         console.error(error);
       }
@@ -24,7 +26,7 @@ export  function ChangeNameForm() {
    })
   return (
     <Form onSubmit={formik.handleSubmit}>
-      <label>Nombre  </label>
+      <label>Nombre y apellidos  </label>
       <div className={styles.content}>
         <Form.Input 
         name= "fristname" 
