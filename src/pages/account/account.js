@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import {BasicLayout} from "@/layouts";
 import {useAuth} from "@/hooks"
 import { Info, Settings } from "@/components/Account";
+import { Separator } from "@/components/Shared"
 import styles from "./account.module.scss";
 
 export default function AccountPage() {
@@ -46,6 +47,7 @@ export default function AccountPage() {
             render:() => (
                 <Tab.Pane attached={false}>
                    <Settings.ChangeNameForm/>
+                   <Separator height={80}/>
                 </Tab.Pane>
             )
         },
