@@ -1,1 +1,7 @@
-export const Label = {};
+import {Discount} from "./Discount"
+
+
+
+export const Label = {
+    Discount,
+};

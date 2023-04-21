@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {Container, Image } from "semantic-ui-react";
 import Link from "next/link";
 import {Contenido} from "@/api"
+import{Label} from "@/components/Shared" 
 import { fn } from "@/utils" 
 import styles from "./BannerLastContenidoPublished.module.scss";
 
@@ -42,7 +43,9 @@ export  function BannerLastContenidoPublished() {
             <h2>{contenido.attributes.title}</h2>
 
             <p className={styles.price}>
-                <label> -20% </label>
+                <Label.Discount>
+                    -{contenido.attributes.discount}
+                </Label.Discount>
                 <span className={styles.finalPrice}>
                     {price}
                 </span>
