@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react";
+import {Container, Image } from "semantic-ui-react";
+import Link from "next/link";
 import {Contenido} from "@/api"
-import style from "./BannerLastContenidoPublished.module.scss";
+import styles from "./BannerLastContenidoPublished.module.scss";
 
 const contenidoCtrl = new Contenido()
 
@@ -18,11 +20,30 @@ export  function BannerLastContenidoPublished() {
     })()
     }, [])
     
-    if(!game)return null;
+    if(!contenido)return null;
+    
+    const wallpaper = contenido.attributes.wallpaper 
+    
+
+
+
 
   return (
-    <div>
-      <h2>BannerLastContenidoPublished</h2>
+    <div className={styles.container}>
+      <Image src={wallpaper.data.attributes.url} className={styles.wallpaper}/>
+
+      <Link className={styles.infoContainer} href={contenido.attributes.slug}>
+        <Container>
+            <h2>{contenido.attributes.title}</h2>
+
+            <p className={styles.price}>
+                <label> -20% </label>
+                <span className={styles.finalPrice}>
+                    37€
+                </span>
+            </p>
+        </Container>
+      </Link>
     </div>
   )
 }
