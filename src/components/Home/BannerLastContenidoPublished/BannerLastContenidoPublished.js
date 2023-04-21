@@ -17,7 +17,8 @@ export  function BannerLastContenidoPublished() {
         }
     })()
     }, [])
-
+    
+    if(!game)return null;
 
   return (
     <div>
