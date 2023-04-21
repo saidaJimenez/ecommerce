@@ -20,4 +20,7 @@ export class Contenido {
             throw error;
         }
     }
+    async getLastestPublished({ limit = 9, platformId = null}) {
+        
+    }
 }
