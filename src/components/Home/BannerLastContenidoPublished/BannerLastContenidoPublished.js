@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {Container, Image } from "semantic-ui-react";
 import Link from "next/link";
 import {Contenido} from "@/api"
+import { fn } from "@/utils" 
 import styles from "./BannerLastContenidoPublished.module.scss";
 
 const contenidoCtrl = new Contenido()
@@ -22,7 +23,11 @@ export  function BannerLastContenidoPublished() {
     
     if(!contenido)return null;
     
-    const wallpaper = contenido.attributes.wallpaper 
+    const wallpaper = contenido.attributes.wallpaper;
+
+    const price = fn.calcDiscountedPrice(
+        contenido.attributes.price,
+        contenido.attributes.discount );
     
 
 
@@ -39,7 +44,7 @@ export  function BannerLastContenidoPublished() {
             <p className={styles.price}>
                 <label> -20% </label>
                 <span className={styles.finalPrice}>
-                    37€
+                    {price}
                 </span>
             </p>
         </Container>
