@@ -44,7 +44,7 @@ export  function BannerLastContenidoPublished() {
 
             <p className={styles.price}>
                 <Label.Discount>
-                    -{contenido.attributes.discount}
+                    -{contenido.attributes.discount}%
                 </Label.Discount>
                 <span className={styles.finalPrice}>
                     {price}

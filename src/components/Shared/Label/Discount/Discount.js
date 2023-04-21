@@ -1,9 +1,11 @@
+import classNames from "classnames"
 import styles from "./Disccount.module.scss"
 
-export  function Discount() {
+export  function Discount(props) {
+    const { children, className } = props
   return (
     <div>
-      <h2>Discount</h2>
+      <span className={classNames(styles.labelDiscount,{[className]: className})}>{children}</span>
     </div>
   )
 }
