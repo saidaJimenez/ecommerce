@@ -12,7 +12,7 @@ export default function HomePage() {
     <Separator height={100}/>
 
     <Container>
-    <Home.LatestContenidos/>
+    <Home.LatestContenidos title="Ultimos lanzamientos"/>
     </Container>
 
    
