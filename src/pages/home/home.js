@@ -3,6 +3,14 @@ import {BasicLayout} from "@/layouts";
 import {Home} from "@/components/Home";
 import { Separator ,BarTrust } from "@/components/Shared"
 
+const platformsId = {
+  perfurme:1,
+  cremas:4,
+  exfoliante:3,
+  aceite:2,
+
+};
+
 export default function HomePage() {
   return (
     <>
@@ -20,7 +28,11 @@ export default function HomePage() {
 
     <BarTrust/>
    <Separator height={100}/>
-
+   
+   <Container>
+    <Home.LatestContenidos title="Perfumes" limit={3} platformId={platformsId.perfurme}/>
+   </Container>
+     <Separator height={100}/>
     </BasicLayout>
     </>
   )
