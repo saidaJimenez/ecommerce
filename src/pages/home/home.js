@@ -42,6 +42,10 @@ export default function HomePage() {
      image="./images/banner.png"
      />
      <Separator height={50}/>
+     <Container>
+    <Home.LatestContenidos title="Aceites" limit={3} platformId={platformsId.aceite}/>
+   </Container>
+   <Separator height={100}/>
     </BasicLayout>
     </>
   )
