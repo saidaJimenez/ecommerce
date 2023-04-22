@@ -1,0 +1,91 @@
+@import "~/src/scss/index.scss";
+
+.panel{
+    position: relative;
+    display: flex !important;
+    margin-top: -250px;
+}
+
+.imgContainer{
+    width: 50%;
+    padding-right: 12px;
+
+   
+}
+
+.actionsContainer{
+    width: 50%;
+    padding-left: 1px;
+    height: 100%;
+
+    > div {
+        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > h2 {
+            margin-bottom: 10px;
+        }
+    }
+}
+.moreInfo{
+    display:flex;
+    padding: 6px 15px;
+    border-radius: 50px;
+    margin-top: 50px;
+    
+    >span {
+        display: flex;
+        align-items: center;
+        border-right: 1px solid $border-primary;
+        padding-right: 10px;
+        margin-right: 10px;
+        font-size: 20px;
+
+        &:first-of-type{
+            > img{
+               height: 50px;
+               margin-right: 10px; 
+            }
+        }
+        &:last-of-type{
+            border-right:0;
+            padding-right: 0;
+            margin-right: 0;
+
+            i {
+                display: flex;
+                align-items: center;
+                color:$sucess;
+                margin-right: 5px;
+                font-size: 15px;
+            }
+
+        }
+    }
+}
+
+.price{
+    margin-bottom: 40px;
+
+    .originalPrice{
+        font-size: 20px;
+        text-decoration: line-through;
+
+        >i{
+            font-size: 20px;
+        }
+       
+    }
+    .discount {
+        margin: 0 20px;
+        color:$border-secondary;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .price {
+        font-size: 35px;
+    }
+}

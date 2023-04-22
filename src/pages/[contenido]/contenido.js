@@ -1,5 +1,6 @@
 import {BasicLayout} from "@/layouts"
 import { Contenido } from "@/components/Contenido"
+import { Separator} from "@/components/Shared"
 
 export default function ContenidoPage(props) {
   const { contenido } = props;
@@ -10,6 +11,11 @@ export default function ContenidoPage(props) {
       <BasicLayout>
       <Contenido.HeaderWallpaper
       image={wallpaper.data.attributes.url}/>
+      <Contenido.Panel contenidoId={contenido.id} contenido={contenido.attributes}/>
+
+      <Separator height={50}/>
+
+
       </BasicLayout>
     </>
   )
