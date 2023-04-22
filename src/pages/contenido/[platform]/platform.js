@@ -1,7 +1,7 @@
 import { Container } from "semantic-ui-react";
 import { size } from "lodash";
 import {BasicLayout} from "@/layouts";
-import {GridContenidos, Separator, NoResult} from "@/components/Shared"
+import {GridContenidos, Separator, NoResult, Pagination} from "@/components/Shared"
 
 export default function PlatformsPage(props) {
 
@@ -10,7 +10,7 @@ export default function PlatformsPage(props) {
   const hasProducts = size(contenidos) > 0;
 
 
-    console.log(props)
+   
   return (
     <>
       <BasicLayout relative >
@@ -21,6 +21,10 @@ export default function PlatformsPage(props) {
           {hasProducts ?(
             <>
             <GridContenidos contenidos={contenidos}/>
+            <Separator height={30}/>
+            <Pagination 
+            currentPage={pagination.page}
+             totalPage={pagination.pageCount}/>
             </>
           ) : (
             <NoResult text= {`La categoría ${platform.attributes.title} aun no tiene productos`}/>

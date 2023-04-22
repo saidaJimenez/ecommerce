@@ -1,6 +1,6 @@
 .ui.pagination {
     border-color: $border-primary;
-    background-color: $background-quaternary;
+    background-color:$border-primary ;
   
     > .item {
       display: flex;
@@ -11,7 +11,7 @@
       &.active,
       &:focus,
       &:hover {
-        background-color: $background-tertiary !important;
+        background-color: $border-secondary !important;
         color: $text-primary !important;
       }
     }

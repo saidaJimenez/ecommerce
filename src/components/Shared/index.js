@@ -6,3 +6,4 @@ export * from "./GridContenidos";
 export * from "./BarTrust";
 export * from "./BannerAd";
 export * from "./NoResult";
+export * from "./Pagination";
