@@ -1,11 +1,15 @@
 import {BasicLayout} from "@/layouts"
+import { Contenido } from "@/components/Contenido"
 
 export default function ContenidoPage(props) {
-    console.log(props)
+  const { contenido } = props;
+  const wallpaper = contenido.attributes.wallpaper;
+    
   return (
     <>
       <BasicLayout>
-        <h2>Página del contenido</h2>
+      <Contenido.HeaderWallpaper
+      image={wallpaper.data.attributes.url}/>
       </BasicLayout>
     </>
   )
