@@ -16,6 +16,11 @@ export default function ContenidoPage(props) {
       <Separator height={50}/>
 
     <Contenido.Info contenido={contenido.attributes}/>
+
+    <Separator height={30}/>
+    <Contenido.Media screenshots={contenido.attributes.screenshots.data}/>
+    <Separator height={50}/>
+
       </BasicLayout>
     </>
   )
