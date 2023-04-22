@@ -15,7 +15,7 @@ export default function ContenidoPage(props) {
 
       <Separator height={50}/>
 
-
+    <Contenido.Info contenido={contenido.attributes}/>
       </BasicLayout>
     </>
   )
