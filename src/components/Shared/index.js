@@ -4,4 +4,5 @@ export * from "./Confirm";
 export * from "./Label";
 export * from "./GridContenidos";
 export * from "./BarTrust";
-export * from "./BannerAd"
+export * from "./BannerAd";
+export * from "./NoResult";
