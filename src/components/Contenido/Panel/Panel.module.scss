@@ -20,7 +20,9 @@
     
 
     > div {
-        border-radius: 15px;
+        background-color:#3d3d3d10;
+        backdrop-filter: blur(15px);
+        border-radius:15px;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -35,7 +37,7 @@
     display:flex;
     padding: 6px 15px;
     border-radius: 50px;
-    margin-top: 50px;
+    margin-bottom: 40px;
     
     >span {
         display: flex;
@@ -94,7 +96,7 @@
 .heart{
     margin: 0 !important;
     position:absolute;
-    top: 29px;
-    right: 75px;
+    top: 15px;
+    right: 15px;
     font-size : 20px !important;
 }
