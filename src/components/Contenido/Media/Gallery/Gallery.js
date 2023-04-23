@@ -1,6 +1,7 @@
 import { useState } from "react"
 import{ Image } from "semantic-ui-react";
 import { map } from "lodash";
+import Slider from "react-slick";
 import {FullModal} from "@/components/Shared"
 import styles from "./Gallery.module.scss";
 
@@ -13,6 +14,18 @@ export  function Gallery(props) {
 
    const  screenshotsClone = [...screenshots];
    const principalImage = screenshotsClone.shift()
+
+   const settings = {
+    dots: true,
+    dotsClass: styles.dots,
+    infinite:true,
+    slidersToShow: 1,
+    slidesToScroll:1,
+    arrows: false,
+    customPaging: function (index) {
+        return <Image src={screenshots[index].attributes.url}/>
+    }
+   }
 
   
    
@@ -32,7 +45,15 @@ export  function Gallery(props) {
         </div>
       </div>
       <FullModal show={show} onClose={onOpenClose}>
-        <h2>Slider de imagenes</h2>
+        <div className={styles.carouselContainer}>
+            <Slider {...settings}>
+                {map (screenshots, (screenshot) =>(
+                    <div key={screenshot.id}>
+                        <Image src ={screenshot.attributes.url}/>
+                    </div>
+                ))}
+            </Slider>
+        </div>
       </FullModal>
     </>
   )
