@@ -1,0 +1,42 @@
+.gallery {
+    display:flex;
+}
+.principal{
+    
+    width: 50%;
+    padding-right: 10px;
+
+    > img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+
+        &:hover{
+            opacity: 0.6;
+            cursor:pointer;
+        }
+    }
+}
+.grid {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+
+    >div {
+        width: 50%;
+        &:nth-child(1){
+            padding: 0 10px 10px 0;
+        }
+        &:nth-child(2){
+            padding: 0 0 10px 10px;
+        }
+        > img {
+            border-radius: 16px;
+            &:hover {
+                opacity: 0.6;
+                cursor:pointer;
+            }
+        }
+    }
+}
