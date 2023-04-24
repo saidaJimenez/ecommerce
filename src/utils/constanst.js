@@ -11,6 +11,7 @@ export const ENV ={
         PLATFORM: "platforms",
         ADDRESS: "addresses",
         CONTENIDO: "contenidos",
+        WISHLIST:"wishlists"
     },
     TOKEN:"token",
   
