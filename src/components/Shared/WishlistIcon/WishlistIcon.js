@@ -31,8 +31,10 @@ export  function WishlistIcon(props) {
     }, [contenidoId]);
 
 
-    const addWishlist = () => {
-      console.log("addWishlist")
+    const addWishlist = async () => {
+      const response = await wishlistCtrl.add(user.id,contenidoId);
+      setHasWishlist(response)
+      
     }
 
 
