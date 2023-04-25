@@ -1,6 +1,9 @@
 import {useState, useEffect} from "react"
+import { size } from "lodash"
 import {Wishlist as WishlistCtrl} from "@/api"
-import { useAuth  } from "@/hooks"
+import { useAuth  } from "@/hooks";
+import { NoResult} from "@/components/Shared"
+import {GridContenidos} from "./GridContenidos"
 
 const wishlistCtrl = new WishlistCtrl();
 
@@ -22,9 +25,9 @@ export function Wishlist () {
     }, [])
     
 
-    return (
-        <div>
-            <h2>Lista de deseos</h2>
-        </div>
-    );
+    return size(wishlist) === 0 ? (
+        <NoResult text="No tienes nigun producto en la lista de deseos"/>
+    ) : (
+        <GridContenidos wishlist={wishlist} />
+    )
 }

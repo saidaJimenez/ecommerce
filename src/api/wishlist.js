@@ -83,7 +83,7 @@ export class Wishlist {
         const urlParams =`${filterUser}&${populate}`
 
 
-        const url =`${ENV.API_URL}/${ENV.ENDPOINTS.WISHLIST}?{urlParams}`
+        const url =`${ENV.API_URL}/${ENV.ENDPOINTS.WISHLIST}?${urlParams}`
 
         const response = await authFetch(url);
         const result = await response.json();
