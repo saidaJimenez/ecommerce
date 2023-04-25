@@ -38,9 +38,14 @@ export  function WishlistIcon(props) {
     }
 
 
-    const deleteWishlist = () => {
-      console.log("deleteWishlist")
-    }
+    const deleteWishlist = async () => {
+      try {
+        await wishlistCtrl.delete(hasWishlist.id)
+        setHasWishlist(false)
+      } catch (error) {
+        console.error(error)
+      }
+    }  
 
     if(hasWishlist === null) return null;
   return (
