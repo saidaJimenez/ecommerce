@@ -10,7 +10,7 @@ const wishlistCtrl = new Wishlist();
 
 
 export  function WishlistIcon(props) {
-    const {contenidoId, className} = props
+    const {contenidoId, className, removeCallback} = props
 
     const [hasWishlist, setHasWishlist] = useState(null);
 
@@ -41,7 +41,11 @@ export  function WishlistIcon(props) {
     const deleteWishlist = async () => {
       try {
         await wishlistCtrl.delete(hasWishlist.id)
-        setHasWishlist(false)
+        setHasWishlist(false);
+
+        if(removeCallback){
+          removeCallback()
+        }
       } catch (error) {
         console.error(error)
       }

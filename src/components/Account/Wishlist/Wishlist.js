@@ -10,7 +10,10 @@ const wishlistCtrl = new WishlistCtrl();
 export function Wishlist () {
 
     const [wishlist, setWishlist] = useState(null);
+    const [reload, setReload] = useState(false)
     const {user } = useAuth();
+
+    const onReload = () => setReload((prevState) => !prevState)
 
     useEffect(() => {
     (async () => {
@@ -22,12 +25,12 @@ export function Wishlist () {
             console.error(error)
         }
     })()
-    }, [])
+    }, [reload])
     
 
     return size(wishlist) === 0 ? (
         <NoResult text="No tienes nigun producto en la lista de deseos"/>
     ) : (
-        <GridContenidos wishlist={wishlist} />
+        <GridContenidos wishlist={wishlist} onReload={onReload} />
     )
 }

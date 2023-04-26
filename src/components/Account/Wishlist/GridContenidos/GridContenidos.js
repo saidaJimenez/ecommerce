@@ -5,7 +5,7 @@ import { fn } from "@/utils";
 import styles from "./GridContenidos.module.scss"
 
 export function GridContenidos(props) {
-     const { wishlist } = props 
+     const { wishlist, onReload } = props 
 
      
 return (
@@ -34,6 +34,11 @@ return (
                 </span>
             </div>
         </Link>
+        
+        <WishlistIcon 
+        contenidoId={contenido.id} 
+        className={styles.wishlistIcon}
+         removeCallback={onReload}/>
         
     </div>
 )
