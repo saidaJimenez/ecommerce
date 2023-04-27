@@ -11,7 +11,8 @@ export function CartProvider(props) {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-      //TODO: Obtener carrito
+      const response = cartCtrl.getAll()
+      setCart(response)
     }, [])
     
 const addCart = (contenidoId) => {
