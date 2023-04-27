@@ -1,7 +1,8 @@
 import { Container } from "semantic-ui-react"
 import {BasicLayout} from "@/layouts";
 import {Home} from "@/components/Home";
-import { Separator ,BarTrust, BannerAd } from "@/components/Shared"
+import { Separator ,BarTrust, BannerAd } from "@/components/Shared";
+
 
 const platformsId = {
   perfurme:1,
@@ -12,6 +13,9 @@ const platformsId = {
 };
 
 export default function HomePage() {
+
+
+
   return (
     <>
     <BasicLayout >
