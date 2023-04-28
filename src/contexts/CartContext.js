@@ -8,7 +8,10 @@ export const CartContext = createContext();
 export function CartProvider(props) {
     const { children } = props;
     const [cart, setCart] = useState(null);
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useState(cartCtrl.count());
+
+
+  
 
     useEffect(() => {
       const response = cartCtrl.getAll()
@@ -17,6 +20,12 @@ export function CartProvider(props) {
     
 const addCart = (contenidoId) => {
     cartCtrl.add(contenidoId)
+    refreshTotalCart()
+}
+
+const refreshTotalCart = () => {
+    setTotal(cartCtrl.count())
+    setCart(cartCtrl.getAll())
 }
 
     const data = {

@@ -1,16 +1,15 @@
 import {Button, Icon, Label} from "semantic-ui-react";
 import { useRouter } from "next/router";
 import classNames from "classnames";
-import { useAuth } from "@/hooks";
+import { useAuth, useCart } from "@/hooks";
 import styles from "./Account.module.scss";
 
-//por ahora ponemos lo siguiente 
 
-const total = 5;
 
 
 export  function Account() {
     const {user} = useAuth();
+    const { total } = useCart();
     const router = useRouter();
 
     const goToLogin = () => router.push("/join/sign-in");

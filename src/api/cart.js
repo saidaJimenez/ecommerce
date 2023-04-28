@@ -1,4 +1,4 @@
-import { size } from "lodash";
+import { forEach } from "lodash";
 import {ENV, authFetch} from "@/utils"
 
 export class Cart {
@@ -32,5 +32,14 @@ export class Cart {
         }
 
       
+    }
+    count(){
+        const response = this.getAll();
+        let count = 0
+
+        forEach(response, (item) => {
+            count += item.quantity
+        } )
+        return count
     }
 }
