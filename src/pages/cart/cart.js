@@ -3,6 +3,7 @@
  import {Contenido} from "@/api"
  import {useCart} from "@/hooks";
  import {CartLayout} from "@/layouts";
+ import {Cart} from "@/components/Cart"
 
 
  const contenidoCtrl = new Contenido ()
@@ -35,7 +36,7 @@ export default function CartPage() {
   return (
     <>
     <CartLayout>
-      {currentStep === 1 && <p>Step ONE</p>}
+      {currentStep === 1 && <Cart.StepOne contenidos={contenidos}/>}
       {currentStep === 2 && <p>Step TWO</p>}
       {currentStep === 3 && <p>Step THREE</p>}
     </CartLayout>
