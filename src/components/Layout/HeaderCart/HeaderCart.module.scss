@@ -30,11 +30,39 @@
         display: flex;
         align-items: center;
 
+
+        &.active {
+            > span {
+                color:$text-secondary;
+            }
+            .number {
+                border-color: $border-secondary
+            }
+        }
+
+        &.success .number{
+            border-color: $border-secondary;
+            background-color: $border-primary;
+            color:$border-primary;
+
+            i{
+                display: flex;
+                position: absolute;
+                margin: 0;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &.success .space {
+            background-color: $border-secondary;
+        }
+        
         >span {
             color:$text-primary;
         }
         .number {
-            border: 3px solid $border-secondary;
+            border: 3px solid $primary;
             font-size: 12px;
             border-radius: 100px;
             height: 26px;
@@ -54,7 +82,7 @@
         .space{
            width: 100px;
            height: 3px;
-           background-color: $border-primary; 
+           background-color: $primary; 
            margin-left: 15px;
            margin-right: 20px;
         }
