@@ -42,4 +42,12 @@ export class Cart {
         } )
         return count
     }
+    changeQuantity(contenidoId, quantity){
+        const contenidos = this.getAll();
+        const objIndex = contenidos.findIndex((contenido) => contenido.id === contenidoId)
+
+        contenidos[objIndex].quantity = quantity;
+
+        localStorage.setItem(ENV.CART, JSON.stringify(contenidos))
+    }
 }

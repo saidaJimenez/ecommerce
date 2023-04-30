@@ -23,6 +23,14 @@ const addCart = (contenidoId) => {
     refreshTotalCart()
 }
 
+const changeQuantityItem = (contenidoId, quantity) => {
+ cartCtrl.changeQuantity(contenidoId, quantity);
+ refreshTotalCart()
+}
+
+
+
+
 const refreshTotalCart = () => {
     setTotal(cartCtrl.count())
     setCart(cartCtrl.getAll())
@@ -34,7 +42,7 @@ const refreshTotalCart = () => {
         total,
         deleteItem:() => {},
         deleteAllItems:() => {},
-        changeQuantityItem: () => {},
+        changeQuantityItem,
     };
 
     return(

@@ -5,7 +5,15 @@ import { useCart } from "@/hooks"
 import styles from "./Basket.module.scss"
 
 export  function Basket(props) {
-    const { contenidos } = props
+    const { contenidos } = props;
+    const {changeQuantityItem} = useCart()
+
+
+    const options = Array.from({length : 5}, (_,index) => {
+        const number = index + 1 ;
+        return { key: number, text: String(number), value: number}
+    })
+
   return (
     <div className={styles.basket}>
       <h2>Cesta</h2>
@@ -25,10 +33,11 @@ export  function Basket(props) {
                     <div className={styles.quantity}>
                         <Dropdown
                         className="number"
-                        options={[]}
+                        options={options}
                         selection
-                        value={null}
+                        value={contenido.quantity}
                         compact
+                        onChange={(_,data) => changeQuantityItem(contenido.id, data.value)}
                         />
                         <span>
                             {fn.calcDiscountedPrice(
