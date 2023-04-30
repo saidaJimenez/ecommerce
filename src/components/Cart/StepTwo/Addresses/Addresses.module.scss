@@ -1,0 +1,24 @@
+@import "~/src/scss/index.scss";
+
+.addresses >h2{
+    margin-bottom: 15px;
+    font-size: 18px;
+
+}
+.address{
+     border: 2px solid $border-secondary;
+     width: 100%;
+     border-radius: 15px;
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 10px;
+
+     &:hover {
+        cursor: pointer;
+        border-color: $primary-hover;
+     }
+    &.active {
+        border-color: $primary-hover;
+    }
+}
