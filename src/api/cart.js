@@ -50,4 +50,11 @@ export class Cart {
 
         localStorage.setItem(ENV.CART, JSON.stringify(contenidos))
     }
+    delete(contenidoId){
+        const contenidos = this.getAll();
+
+        const updateContenidos = contenidos.filter((contenido) => contenido.id !== contenidoId)
+
+        localStorage.setItem(ENV.CART, JSON.stringify(updateContenidos))
+    }
 }

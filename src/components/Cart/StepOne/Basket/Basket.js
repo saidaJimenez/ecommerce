@@ -6,7 +6,7 @@ import styles from "./Basket.module.scss"
 
 export  function Basket(props) {
     const { contenidos } = props;
-    const {changeQuantityItem} = useCart()
+    const {changeQuantityItem, deleteItem} = useCart()
 
 
     const options = Array.from({length : 5}, (_,index) => {
@@ -28,7 +28,8 @@ export  function Basket(props) {
                             <p>{contenido.attributes.title}</p>
                             <p>{contenido.attributes.platform.data.attributes.title}</p>
                         </div>
-                        <Icon name="trash alternate online" link/>
+                        <Icon name="trash alternate online" link
+                         onClick={() => deleteItem(contenido.id) }/>
                     </div>
                     <div className={styles.quantity}>
                         <Dropdown
