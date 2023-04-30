@@ -1,12 +1,12 @@
 import { Container } from "semantic-ui-react"
-import {Footer} from "@/components/Layout"
+import {Footer, HeaderCart} from "@/components/Layout"
 import {Separator } from "@/components/Shared"
 
 export  function CartLayout(props) {
     const {children} = props;
   return (
     <>
-      <p>HeaderCart</p>
+      <HeaderCart/>
       <Separator height={150}/>
       <Container>
         {children}
