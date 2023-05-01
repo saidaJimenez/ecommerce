@@ -11,7 +11,7 @@ export  function CartLayout(props) {
       <Container>
         {children}
       </Container>
-      <Separator heigth={100}/>
+      <Separator height={100}/>
       <Footer/>
     </>
   )

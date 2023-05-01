@@ -5,6 +5,7 @@ import {Separator} from "@/components/Shared";
 import {ENV} from "@/utils"
 import {Addresses} from "./Addresses";
 import {Payment} from "./Payment"
+import {Resume} from "./Resume"
 import styles from "./StepTwo.module.scss"
 
 const stripeInit = loadStripe(ENV.STRIPE_TOKEN)
@@ -23,7 +24,7 @@ export  function StepTwo(props) {
     
       </div>
       <div className={styles.rigth}>
-        <p>Resume</p>
+        <Resume contenidos={contenidos} addressSelected={addressSelected}/>
       </div>
     </div>
     </Elements>
