@@ -38,7 +38,7 @@ export default function CartPage() {
     <CartLayout>
       {currentStep === 1 && <Cart.StepOne contenidos={contenidos}/>}
       {currentStep === 2 && <Cart.StepTwo contenidos={contenidos}/>}
-      {currentStep === 3 && <p>Step THREE</p>}
+      {currentStep === 3 && <Cart.StepThree/>}
     </CartLayout>
     </>
   )
