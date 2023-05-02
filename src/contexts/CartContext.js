@@ -32,6 +32,10 @@ const deleteItem = (contenidoId) => {
  cartCtrl.delete(contenidoId)
  refreshTotalCart()
 }
+const deleteAllItems = () => {
+    cartCtrl.deleteAll();
+    refreshTotalCart()
+}
 
 
 const refreshTotalCart = () => {
@@ -44,7 +48,7 @@ const refreshTotalCart = () => {
         addCart,
         total,
         deleteItem,
-        deleteAllItems:() => {},
+        deleteAllItems,
         changeQuantityItem,
     };
 
