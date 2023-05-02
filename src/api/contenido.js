@@ -42,7 +42,7 @@ export class Contenido {
        async getContenidosByPlatformSlug(slug, page) {
         try {
             const filters = `filters[platform][slug][$eq]=${slug}`;
-            const pagination = `pagination[page]&pagination[pageSize]=30`;
+            const pagination = `pagination[page]=${page}&pagination[pageSize]=30`;
             const populate = "populate=*";
             const urlParams =`${filters}&${pagination}&${populate}`
 
