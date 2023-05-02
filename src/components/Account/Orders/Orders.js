@@ -1,9 +1,12 @@
 import { useState, useEffect} from "react";
-import { Order } from "@/api";
+import { map } from "lodash"
+import { Order as OrderCtrl} from "@/api";
 import {useAuth} from "@/hooks"
 import {NoResult} from "@/components/Shared"
+import { Order } from "./Order"
 
-const orderCtrl = new Order()
+
+const orderCtrl = new OrderCtrl()
 
 export  function Orders() {
 const [orders, setOrders] = useState(null);
@@ -27,7 +30,9 @@ if (!orders) return <NoResult text="No tienes ningun producto comprado"/>
 
   return (
     <div>
-      <h2>Orders</h2>
+      {map(orders, (order) => (
+        <Order key={order.id} order={order}/>
+      ))}
     </div>
   )
 }
