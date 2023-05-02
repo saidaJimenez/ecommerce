@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import {BasicLayout} from "@/layouts";
 import {useAuth} from "@/hooks"
 import { Info, Settings, Address, Wishlist, Orders } from "@/components/Account";
-import { Separator } from "@/components/Shared"
+import { Separator, Seo } from "@/components/Shared"
 import styles from "./account.module.scss";
 
 export default function AccountPage() {
@@ -78,6 +78,7 @@ export default function AccountPage() {
     
   return (
     <>
+    <Seo title= "Mi cuenta" />
     <BasicLayout isContainer relative>
     <Info/>
 

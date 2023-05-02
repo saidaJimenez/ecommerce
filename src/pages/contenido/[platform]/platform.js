@@ -1,7 +1,7 @@
 import { Container } from "semantic-ui-react";
 import { size } from "lodash";
 import {BasicLayout} from "@/layouts";
-import {GridContenidos, Separator, NoResult, Pagination} from "@/components/Shared"
+import {GridContenidos, Separator, NoResult, Pagination,Seo} from "@/components/Shared"
 
 export default function PlatformsPage(props) {
 
@@ -13,6 +13,7 @@ export default function PlatformsPage(props) {
    
   return (
     <>
+    <Seo  title={`${platform.attributes.title}`}/>
       <BasicLayout relative >
         <Container>
           <Separator height={50}/>
